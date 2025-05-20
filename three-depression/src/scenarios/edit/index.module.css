@@ -1,0 +1,32 @@
+.pageHeader {
+  height: 40px;
+  position: relative;
+  text-align: center;
+
+  :global(.arco-page-header-head) {
+    display: flex;
+    justify-content: center;
+  }
+
+  :global(.arco-page-header-back) {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0;
+    font-size: large;
+    font-weight: 500;
+    color: black;
+  }
+}
+
+.formWrapper {
+  margin-left: 500px;
+  margin-top: 20px;
+  width: 700px;
+}
+
+.savButton {
+  width: 120px;
+  margin-top: 20px;
+}

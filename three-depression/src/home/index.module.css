@@ -1,0 +1,41 @@
+.pageHeader {
+  height: 40px;
+
+  .headerButton {
+    color: black;
+  }
+}
+
+.container {
+  font-size: 40px;
+  text-align: left;
+  height: 100%;
+
+  .pageHeader {
+    height: 40px;
+
+    .buttonWrapper button {
+      color: black;
+    }
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 400px;
+    width: 100%;
+
+    .startButton {
+      width: 200px;
+      color: black;
+      border-color: black;
+    }
+
+    .startButton:hover {
+      background-color: black;
+      border-color: black;
+      color: white;
+    }
+  }
+}

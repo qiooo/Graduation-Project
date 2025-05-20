@@ -1,0 +1,38 @@
+.pageHeader {
+  height: 40px;
+  position: relative;
+
+  :global(.arco-page-header-head) {
+    display: flex;
+    justify-content: center;
+  }
+
+  :global(.arco-page-header-back) {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0;
+    font-size: large;
+    font-weight: 500;
+    color: black;
+  }
+}
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+
+  .form {
+    width: 500px;
+    gap: 20px;
+  }
+}
+.buttonWrapper {
+  text-align: center;
+
+  .finishButton {
+    width: 120px;
+    height: 40px;
+  }
+}

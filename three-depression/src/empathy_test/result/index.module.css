@@ -1,0 +1,55 @@
+.pageHeader {
+  height: 40px;
+  position: relative;
+  text-align: center;
+
+  :global(.arco-page-header-head) {
+    display: flex;
+    justify-content: center;
+  }
+
+  :global(.arco-page-header-back) {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0;
+    font-size: large;
+    font-weight: 500;
+    color: black;
+  }
+}
+
+.empathyScore {
+  font-size: 80px;
+  animation: rotate3d 10s linear infinite;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+/* 浏览器前缀版本 */
+@-webkit-keyframes rotate3d {
+  0% {
+    -webkit-transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(1000px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+.formWrapper {
+  .detailButton {
+    margin-right: 100px;
+    color: black;
+  }
+}

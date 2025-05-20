@@ -1,0 +1,124 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+
+    .backButton {
+        font-size: 30px;
+        margin-top: 10px;
+        margin-left: 15px;
+        color: black;
+    }
+
+    .title {
+        position: absolute;
+        font-size: 80px;
+        right: 50px;
+    }
+
+    .scenariosWrapper {
+        .third,
+        .second,
+        .first {
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            border: 1px solid black;
+
+            .deleteButton {
+                position: absolute;
+                top: 150px;
+                left: 150px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .scenariosNum {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                border-radius: 5%;
+                text-align: center;
+                font-size: 30px;
+                font-weight: 400;
+            }
+        }
+
+        .first {
+            left: 50px;
+            bottom: 250px;
+            background-color: black;
+
+            .deleteButton {
+                border-color: black;
+                background-color: white;
+                color: black;
+            }
+
+            .scenariosNum {
+                bottom: 100px;
+                right: 150px;
+                background-color: white;
+            }
+        }
+
+        .second {
+            z-index: 1;
+            left: 600px;
+            bottom: 400px;
+            background-color: white;
+
+            .deleteButton {
+                border-color: gray;
+                background-color: grey;
+                color: white;
+            }
+            
+            .scenariosNum {
+                bottom: 80px;
+                right: 200px;
+                background-color: grey;
+                color: white;
+            }
+        }
+
+        .third {
+            right: 180px;
+            bottom: 150px;
+            background-color: grey;
+
+           .deleteButton {
+                border-color: black;
+                background-color: black;
+                color: white;
+            }
+
+            .scenariosNum {
+                bottom: 100px;
+                left: 150px;
+                background-color: white;
+            }
+        }
+
+        .createButton {
+            position: absolute;
+            bottom: 100px;
+            right: 50px;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            border: 1px solid black;
+            color: black;
+            text-align: center;
+        }
+
+        .createButton:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+}

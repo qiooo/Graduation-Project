@@ -1,0 +1,48 @@
+.rootContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.contentWrapper {
+  width: 400px;
+  padding: 10px 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  .formWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .formTitle {
+      text-align: center;
+    }
+
+    .formButton {
+      display: block;
+      width: 150px;
+      background-color: black;
+      border-color: black;
+      color: white;
+    }
+
+    .formButton:hover {
+      background-color: grey;
+    }
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 100%;
+
+    .bottomButton {
+      color: black;
+    }
+  }
+}
