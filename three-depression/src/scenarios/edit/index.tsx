@@ -30,9 +30,11 @@ export const EditPage = () => {
           </Radio.Group>
         </Form.Item>
       </Form>
-      <Button type='primary' className={styles.savButton}>
-        保存
-      </Button>
+      <div className={styles.buttonWrapper}>
+        <Button type='primary' className={styles.saveButton}>
+          保存
+        </Button>
+      </div>
     </PageHeader>
   );
 };

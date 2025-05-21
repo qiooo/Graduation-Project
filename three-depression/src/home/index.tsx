@@ -74,11 +74,16 @@ export const HomePage = () => {
           Welcome to<br></br>Depression Feeling System
         </h1>
         <div className={styles.buttonWrapper}>
-          <Button 
+          <Button
             type='outline'
             className={styles.startButton}
             size='large'
-            onClick={() => navigate('/scenarios/detail')}
+            onClick={() =>
+              navigate({
+                pathname: '/scenarios/detail',
+                search: `?userId=${1}`,
+              })
+            }
           >
             Let's start!
           </Button>

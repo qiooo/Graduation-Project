@@ -9,21 +9,22 @@ import { IconLeft } from '@arco-design/web-react/icon';
 import { useMemo, useRef } from 'react';
 import { Physics, useCompoundBody } from '@react-three/cannon';
 
-function Fragment({ position, geometry }: { position: THREE.Vector3, geometry: THREE.BufferGeometry }) {
+function Fragment({
+  position,
+  geometry,
+}: {
+  position: THREE.Vector3;
+  geometry: THREE.BufferGeometry;
+}) {
   const [ref] = useCompoundBody(() => ({
     mass: 1,
     position: [position.x, position.y, position.z],
-    shapes: [
-      { type: 'ConvexPolyhedron', args: [geometry] },
-    ],
+    shapes: [{ type: 'ConvexPolyhedron', args: [geometry] }],
   }));
 
   return (
-    <mesh 
-      ref={ref as React.Ref<THREE.Mesh>}
-      geometry={geometry}
-    >
-      <meshStandardMaterial color="white" />
+    <mesh ref={ref as React.Ref<THREE.Mesh>} geometry={geometry}>
+      <meshStandardMaterial color='white' />
     </mesh>
   );
 }
@@ -38,9 +39,9 @@ function BrokenModel() {
         pos: new THREE.Vector3(
           (Math.random() - 0.5) * 2,
           (Math.random() - 0.5) * 2,
-          (Math.random() - 0.5) * 2
+          (Math.random() - 0.5) * 2,
         ),
-        geo: nodes.YourModelPart.geometry // 替换为实际模型部件名称
+        geo: nodes.YourModelPart.geometry, // 替换为实际模型部件名称
       });
     }
     return positions;
@@ -48,7 +49,7 @@ function BrokenModel() {
 
   return (
     <Physics gravity={[0, -9.8, 0]}>
-      {fragments.map(({pos, geo}, i) => (
+      {fragments.map(({ pos, geo }, i) => (
         <Fragment key={i} position={pos} geometry={geo} />
       ))}
     </Physics>
@@ -124,7 +125,7 @@ export const ComunicationPage = () => {
           <div>患者的抑郁程度：{detail.depressionLevel}</div>
           <div>共情能力：{detail.empathy}</div>
         </div>
-        <Button 
+        <Button
           type='primary'
           shape='circle'
           size='large'

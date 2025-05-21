@@ -26,7 +26,19 @@
   width: 700px;
 }
 
-.savButton {
-  width: 120px;
-  margin-top: 20px;
+.buttonWrapper {
+  .saveButton {
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+  }
+
+  
+  .saveButton:hover {
+    border: 1px solid black !important;
+    background-color: white !important;
+    color: black !important;
+  }
 }

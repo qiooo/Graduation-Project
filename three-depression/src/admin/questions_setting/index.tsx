@@ -70,23 +70,21 @@ export const QuestionSetting = () => {
           shape='round'
           className={styles.button}
           onClick={() => {
-            form.setFieldsValue({ questions: {
-              questionId: Date.now(),
-              text: '',
-              isRelease: false,
-              options: [{ optionId: Date.now(), option: '', point: 0 }]
-            } });
+            form.setFieldsValue({
+              questions: {
+                questionId: Date.now(),
+                text: '',
+                isRelease: false,
+                options: [{ optionId: Date.now(), option: '', point: 0 }],
+              },
+            });
             setAddButton(false);
           }}
         >
           + 添加题目
         </Button>
       )}
-      <Form 
-        form={form}
-        layout='vertical'
-        initialValues={{questions: dataSource}}
-      >
+      <Form form={form} layout='vertical' initialValues={{ questions: dataSource }}>
         <Form.List field='questions'>
           {(fields, { add, remove }) => (
             <>
@@ -95,20 +93,27 @@ export const QuestionSetting = () => {
                   <Space>
                     <h3>问题 {index + 1}</h3>
                     <div className={styles.buttonWrapper}>
-                      <Button 
+                      <Button
                         type='text'
                         icon={<IconPlusCircle />}
-                        onClick={() => { add({
-                          questionId: Date.now(),
-                          text: '',
-                          isRelease: false,
-                          options: [{ optionId: Date.now(), option: '', point: 0 }]
-                        }, index+1); }}
+                        onClick={() => {
+                          add(
+                            {
+                              questionId: Date.now(),
+                              text: '',
+                              isRelease: false,
+                              options: [{ optionId: Date.now(), option: '', point: 0 }],
+                            },
+                            index + 1,
+                          );
+                        }}
                       />
                       <Button
                         type='text'
                         icon={<IconDelete />}
-                        onClick={() => { remove(index); }}
+                        onClick={() => {
+                          remove(index);
+                        }}
                       />
                     </div>
                   </Space>
@@ -117,33 +122,30 @@ export const QuestionSetting = () => {
                     field={`${item.field}.text`}
                     normalize={(value) => value?.trim()}
                     required
-                    rules={[{ 
-                      validator(value, message) {
-                        if (!value || value?.trim() === '') {
-                          return message('该项为必填，请输入');
-                        }
-                      },
-                    }]}
-                  >
-                    <Input.TextArea
-                      placeholder='请输入题目内容'
-                      autoSize={{ minRows: 1 }}
-                    />
-                  </Form.Item>
-                  <Form.Item
-                    label='题目选项'
-                    labelAlign='left'
-                    className={styles.optionForm}
-                  >
-                    <Form.List 
-                      field={`${item.field}.options`}
-                      rules={[{
-                        validator(options, message) {
-                          if (!options || options?.length < 2) {
-                            return message('选项数量至少为 2');
+                    rules={[
+                      {
+                        validator(value, message) {
+                          if (!value || value?.trim() === '') {
+                            return message('该项为必填，请输入');
                           }
                         },
-                      }]}
+                      },
+                    ]}
+                  >
+                    <Input.TextArea placeholder='请输入题目内容' autoSize={{ minRows: 1 }} />
+                  </Form.Item>
+                  <Form.Item label='题目选项' labelAlign='left' className={styles.optionForm}>
+                    <Form.List
+                      field={`${item.field}.options`}
+                      rules={[
+                        {
+                          validator(options, message) {
+                            if (!options || options?.length < 2) {
+                              return message('选项数量至少为 2');
+                            }
+                          },
+                        },
+                      ]}
                     >
                       {(optionsFields, { add, remove }) => (
                         <>
@@ -156,13 +158,15 @@ export const QuestionSetting = () => {
                                 layout='horizontal'
                                 className={styles.optionItem}
                                 required
-                                rules={[{ 
-                                  validator(value, message) {
-                                    if (!value || value?.trim() === '') {
-                                      return message('该项为必填，请输入');
-                                    }
+                                rules={[
+                                  {
+                                    validator(value, message) {
+                                      if (!value || value?.trim() === '') {
+                                        return message('该项为必填，请输入');
+                                      }
+                                    },
                                   },
-                                }]}
+                                ]}
                               >
                                 <Input.TextArea
                                   placeholder={`请输入选项 ${optionIndex + 1} 内容`}
@@ -190,7 +194,12 @@ export const QuestionSetting = () => {
                                 <Button
                                   type='text'
                                   icon={<IconPlusCircle />}
-                                  onClick={() => add({ optionId: Date.now(), option: '', point: 0 }, optionIndex+1)}
+                                  onClick={() =>
+                                    add(
+                                      { optionId: Date.now(), option: '', point: 0 },
+                                      optionIndex + 1,
+                                    )
+                                  }
                                 />
                                 <Button
                                   type='text'
